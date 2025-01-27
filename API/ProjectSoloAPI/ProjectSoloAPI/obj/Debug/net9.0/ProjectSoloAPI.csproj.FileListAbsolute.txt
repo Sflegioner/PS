@@ -72,3 +72,6 @@ C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\obj\Debug\net9.0\refint
 C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\obj\Debug\net9.0\ProjectSoloAPI.pdb
 C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\obj\Debug\net9.0\ProjectSoloAPI.genruntimeconfig.cache
 C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\obj\Debug\net9.0\ref\ProjectSoloAPI.dll
+C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\GitCESI\ProjectSolo\API\ProjectSoloAPI\ProjectSoloAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
