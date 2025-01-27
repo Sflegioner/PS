@@ -3,6 +3,7 @@ using ProjectSoloAPI.RoutesAPI;
 MongoDBConnection.CreateDatabaseAndCollection();//Create DB and Collections
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddOpenApi();
 
 builder.Services.AddEndpointsApiExplorer(); //Swagger 

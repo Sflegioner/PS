@@ -19,12 +19,12 @@ public sealed class MongoDBConnection
     {
        var client = GetMongoDBConnection();
        var database = client.GetDatabase("ProjectSoloDB");
-       if (!database.ListCollections().Any())
-       {
+      if (!database.ListCollections().Any())
+      {
            database.CreateCollection("Sites");
            database.CreateCollection("Services");
            database.CreateCollection("Salaries");   
-       }
+      }
        Console.WriteLine("Collection created!");
        return true;
     }
