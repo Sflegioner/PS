@@ -10,9 +10,11 @@ builder.Services.AddEndpointsApiExplorer(); //Swagger
 builder.Services.AddSwaggerGen();//Swagger 
 
 var app = builder.Build();
-
+//-------------------------Map for API Route-----------------------------------------------//
 app.MapSiteRoutes();
+app.MapSeviceRoutes();
 
+//-------------------------Map for API Route-----------------------------------------------//
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger(); //Swagger 
