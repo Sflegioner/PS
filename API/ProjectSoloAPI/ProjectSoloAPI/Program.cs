@@ -13,6 +13,7 @@ var app = builder.Build();
 //-------------------------Map for API Route-----------------------------------------------//
 app.MapSiteRoutes();
 app.MapSeviceRoutes();
+app.MapSalarieRoutes();
 
 //-------------------------Map for API Route-----------------------------------------------//
 if (app.Environment.IsDevelopment())
