@@ -6,7 +6,8 @@ namespace ProjectSoloAPI.Models;
 public class SiteModel
 {
     [BsonId]
-    public ObjectId Id { get; set; } 
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
     [BsonElement("SiteName")]
     public string SiteName { get; set; }
 }

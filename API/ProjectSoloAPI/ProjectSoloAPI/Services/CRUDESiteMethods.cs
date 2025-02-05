@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using ProjectSoloAPI.Models;
 
@@ -18,6 +19,7 @@ public static class CRUDESiteMethods
         var AllSites = CollectionSite.GetDatabase("ProjectSoloDB").GetCollection<SiteModel>("Sites");
         var site = new SiteModel()
         {
+            Id = ObjectId.GenerateNewId().ToString(),
             SiteName = SiteName
         };
         AllSites.InsertOne(site);

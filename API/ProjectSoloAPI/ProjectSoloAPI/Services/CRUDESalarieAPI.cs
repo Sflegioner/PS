@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using ProjectSoloAPI.Models;
 
 namespace ProjectSoloAPI.Services;
@@ -13,35 +14,36 @@ public class CRUDESalarieAPI
         return ListAllSalarie.Find(_ => true).ToList();
     }
 
-    public static bool PostSalarie(string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string Email, string Service, string Site)
+    public static bool PostSalarie(string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string Email, string ServiceId, string SiteId)
     {
         var NewSalarie = new SalarieModel()
         {
+            Id = ObjectId.GenerateNewId().ToString(),
             Nom = Nom,
             Prenom = Prenom,
             TelephoneFixe = TelephoneFixe,
             TelephonePortable = TelephonePortable,
             Email = Email,
-            Service = Service,
-            Site = Site
+            ServiceId = ServiceId, 
+            SiteId = SiteId  
         };
         var ListAllSalarie = Collection.GetDatabase("ProjectSoloDB").GetCollection<SalarieModel>("Salaries");
         ListAllSalarie.InsertOne(NewSalarie);
         return true;
     }
 
-    public static bool UpdateSalarie(string Email, string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string Service, string Site)
+    public static bool UpdateSalarie(string ID, string Nom, string Prenom,string Email, string TelephoneFixe, string TelephonePortable, string ServiceId, string SiteId)
     {
         var ListAllSalarie = Collection.GetDatabase("ProjectSoloDB").GetCollection<SalarieModel>("Salaries");
-        var filter = Builders<SalarieModel>.Filter.Eq(s => s.Email, Email);
+        var filter = Builders<SalarieModel>.Filter.Eq(s => s.Id, ID);
         var update = Builders<SalarieModel>.Update
             .Set(s => s.Nom, Nom)
             .Set(s => s.Prenom, Prenom)
+            .Set(s => s.Email, Email)
             .Set(s => s.TelephoneFixe, TelephoneFixe)
             .Set(s => s.TelephonePortable, TelephonePortable)
-            .Set(s => s.Service, Service)
-            .Set(s => s.Site, Site);
-
+            .Set(s => s.ServiceId, ServiceId)
+            .Set(s => s.SiteId, SiteId);
         var result = ListAllSalarie.UpdateOne(filter, update);
         return result.ModifiedCount > 0;
     }

@@ -6,7 +6,8 @@ namespace ProjectSoloAPI.Models;
 public class SalarieModel
 {
     [BsonId]
-    public ObjectId Id { get; set; } 
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
 
     [BsonElement("Nom")]
     public string Nom { get; set; } 
@@ -24,9 +25,12 @@ public class SalarieModel
     public string Email { get; set; } 
 
     [BsonElement("Service")]
-    public string Service { get; set; } 
+    [BsonRequired]
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string ServiceId { get; set; }
 
     [BsonElement("Site")]
-    public string Site { get; set; } 
-    
+    [BsonRequired] 
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string SiteId { get; set; }
 }

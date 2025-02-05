@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using ProjectSoloAPI.Models;
 
 namespace ProjectSoloAPI.Services;
@@ -17,6 +18,7 @@ public class CRUDEServiceMethods
         var AllServicesList = CollectionSite.GetDatabase("ProjectSoloDB").GetCollection<ServiceModel>("Services");
         var ServicesList = new ServiceModel()
         {
+            Id = ObjectId.GenerateNewId().ToString(),
             ServiceName = ServiceName,
         };
         AllServicesList.InsertOne(ServicesList);

@@ -12,16 +12,16 @@ public static class SalarieRoutesAPI
             return Results.Json(salarie);
         });
 
-        app.MapPost("/api/salarie/{Nom}/{Prenom}/{TelephoneFixe}/{TelephonePortable}/{Email}/{Service}/{Site}",
-            (string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string Email, string Service, string Site) =>
+        app.MapPost("/api/salarie/{Nom}/{Prenom}/{TelephoneFixe}/{TelephonePortable}/{Email}/{ServiceId}/{SiteId}",
+            (string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string Email, string ServiceId, string SiteId) =>
             {
-                return Results.Json(CRUDESalarieAPI.PostSalarie(Nom, Prenom, TelephoneFixe, TelephonePortable, Email, Service, Site));
+                return Results.Json(CRUDESalarieAPI.PostSalarie(Nom, Prenom, TelephoneFixe, TelephonePortable, Email, ServiceId, SiteId));
             });
 
-        app.MapPut("/api/salarie/{Email}/{Nom}/{Prenom}/{TelephoneFixe}/{TelephonePortable}/{Service}/{Site}",
-            (string Email, string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string Service, string Site) =>
+        app.MapPut("/api/salarie/{ID}/{Email}/{Nom}/{Prenom}/{TelephoneFixe}/{TelephonePortable}/{ServiceId}/{Site}",
+            (string ID, string Email, string Nom, string Prenom, string TelephoneFixe, string TelephonePortable, string ServiceId, string SiteId) =>
             {
-                return CRUDESalarieAPI.UpdateSalarie(Email, Nom, Prenom, TelephoneFixe, TelephonePortable, Service, Site)
+                return CRUDESalarieAPI.UpdateSalarie(ID,Nom, Prenom, Email, TelephoneFixe, TelephonePortable,ServiceId, SiteId)
                     ? Results.Ok($"Salarie {Email} updated successfully.")
                     : Results.NotFound($"Salarie {Email} not found.");
             });

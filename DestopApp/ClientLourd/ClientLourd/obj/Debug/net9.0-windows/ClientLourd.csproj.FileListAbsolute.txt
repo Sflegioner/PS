@@ -3,11 +3,9 @@ C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-window
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\ClientLourd.runtimeconfig.json
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\ClientLourd.dll
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\ClientLourd.pdb
-C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\App.g.cs
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLourd_MarkupCompile.cache
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLourd_MarkupCompile.lref
-C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.baml
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLourd.g.resources
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLourd.GeneratedMSBuildEditorConfig.editorconfig
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLourd.AssemblyInfoInputs.cache
@@ -24,3 +22,5 @@ C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-window
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\CommonView.g.cs
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\AdminView.baml
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\CommonView.baml
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.g.cs
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.baml
