@@ -24,3 +24,5 @@ C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-window
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\CommonView.baml
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.baml
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\DetailsWindow.g.cs
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\DetailsWindow.baml

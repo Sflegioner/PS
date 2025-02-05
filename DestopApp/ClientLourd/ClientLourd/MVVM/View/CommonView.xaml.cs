@@ -1,6 +1,8 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using ClientLourd.Core;
 using ClientLourd.MVVM.Model;
+using ClientLourd.MVVM.ViewModel;
 
 namespace ClientLourd.MVVM.View;
 
@@ -9,16 +11,21 @@ public partial class CommonView : UserControl
     public CommonView()
     {
         InitializeComponent();
-        ShowAllSites();
+        DataContext = new CommonViewModel();
     }
-
-    public async void ShowAllSites()
+    private void OnSearchClick(object sender, RoutedEventArgs e)
     {
-        List<SiteModel> sites = await APIserviceSite.GetSitesAsync();
-    
-        foreach (var site in sites)
+        if (DataContext is CommonViewModel vm)
+            vm.ApplyFilter();
+    }
+    private void OnItemClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        if (sender is Border border && border.DataContext is SalarieModel salarie)
         {
-            Console.WriteLine($"ID: {site.Id}, Назва: {site.SiteName}");
+            if (DataContext is CommonViewModel vm)
+                vm.OpenDetailsWindow(salarie);
         }
     }
+
+
 }

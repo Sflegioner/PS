@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\App.xaml
-3886439640
+4-890374371
 
-10-1457127839
+16-302216120
 2011907472437
-MainWindow.xaml;MVVM\View\AdminView.xaml;MVVM\View\CommonView.xaml;
+MainWindow.xaml;MVVM\View\AdminView.xaml;MVVM\View\CommonView.xaml;MVVM\View\DetailsWindow.xaml;
 
-True
+False
 
