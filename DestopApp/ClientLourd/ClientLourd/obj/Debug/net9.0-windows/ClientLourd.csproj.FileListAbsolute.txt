@@ -26,3 +26,9 @@ C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-window
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MainWindow.baml
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\DetailsWindow.g.cs
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\DetailsWindow.baml
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\CommunityToolkit.Mvvm.dll
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLourd.csproj.AssemblyReference.cache
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\ClientLo.3AE2EBB6.Up2Date
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\UpdateSalarieView.g.cs
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\UpdateSalarieView.baml
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\Newtonsoft.Json.dll

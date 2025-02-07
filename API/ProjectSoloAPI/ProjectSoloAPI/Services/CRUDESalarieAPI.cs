@@ -32,10 +32,14 @@ public class CRUDESalarieAPI
         return true;
     }
 
-    public static bool UpdateSalarie(string ID, string Nom, string Prenom,string Email, string TelephoneFixe, string TelephonePortable, string ServiceId, string SiteId)
+    public static bool UpdateSalarie(string ID, string Nom, string Prenom, string Email, 
+        string TelephoneFixe, string TelephonePortable, 
+        string ServiceId, string SiteId)
     {
         var ListAllSalarie = Collection.GetDatabase("ProjectSoloDB").GetCollection<SalarieModel>("Salaries");
-        var filter = Builders<SalarieModel>.Filter.Eq(s => s.Id, ID);
+
+        var filter = Builders<SalarieModel>.Filter.Eq(s => s.Id, ID); 
+    
         var update = Builders<SalarieModel>.Update
             .Set(s => s.Nom, Nom)
             .Set(s => s.Prenom, Prenom)
@@ -44,9 +48,14 @@ public class CRUDESalarieAPI
             .Set(s => s.TelephonePortable, TelephonePortable)
             .Set(s => s.ServiceId, ServiceId)
             .Set(s => s.SiteId, SiteId);
+
         var result = ListAllSalarie.UpdateOne(filter, update);
+
+        Console.WriteLine($"Matched: {result.MatchedCount}, Modified: {result.ModifiedCount}");
+
         return result.ModifiedCount > 0;
     }
+
 
     public static bool DeleteSalarie(string Email)
     {

@@ -19,6 +19,6 @@ namespace ClientLourd.Core
             string json = await response.Content.ReadAsStringAsync();
             List<SiteModel> sites = JsonSerializer.Deserialize<List<SiteModel>>(json, new JsonSerializerOptions {PropertyNameCaseInsensitive = true });
             return sites ?? new List<SiteModel>();
-            }
+        }
     }
 }

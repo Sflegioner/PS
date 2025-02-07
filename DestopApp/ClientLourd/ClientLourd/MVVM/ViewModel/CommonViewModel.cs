@@ -29,8 +29,8 @@ public class CommonViewModel
         ListSalaries.Clear();
         foreach (var salarie in allSalaries.Where(s =>
                      (string.IsNullOrWhiteSpace(SearchByNameText) || s.Nom.Contains(SearchByNameText, System.StringComparison.OrdinalIgnoreCase)) &&
-                     (string.IsNullOrWhiteSpace(SearchBySiteText) || s.Site.Contains(SearchBySiteText, System.StringComparison.OrdinalIgnoreCase)) &&
-                     (string.IsNullOrWhiteSpace(SearchByServiceText) || s.Service.Contains(SearchByServiceText, System.StringComparison.OrdinalIgnoreCase))))
+                     (string.IsNullOrWhiteSpace(SearchBySiteText) || s.siteName.Contains(SearchBySiteText, System.StringComparison.OrdinalIgnoreCase)) &&
+                     (string.IsNullOrWhiteSpace(SearchByServiceText) || s.serviceName.Contains(SearchByServiceText, System.StringComparison.OrdinalIgnoreCase))))
         {
             ListSalaries.Add(salarie);
         }

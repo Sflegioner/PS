@@ -1,0 +1,35 @@
+﻿<Window x:Class="ClientLourd.MVVM.View.UpdateSalarieView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:ClientLourd.MVVM.View"
+        mc:Ignorable="d"
+        Title="Update Salarie" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Nom:"/>
+            <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Prenom:"/>
+            <TextBox Text="{Binding Salarie.Prenom, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Téléphone Fixe:"/>
+            <TextBox Text="{Binding Salarie.TelephoneFixe, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Téléphone Portable:"/>
+            <TextBox Text="{Binding Salarie.TelephonePortable, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Email:"/>
+            <TextBox Text="{Binding Salarie.Email, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Service ID:"/>
+            <TextBox Text="{Binding Salarie.serviceId, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="Site ID:"/>
+            <TextBox Text="{Binding Salarie.siteId, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button Content="Update" Command="{Binding UpdateSalarieCommand}" HorizontalAlignment="Center" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
