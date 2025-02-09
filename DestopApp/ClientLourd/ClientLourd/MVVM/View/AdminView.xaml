@@ -12,17 +12,17 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <!-- -->
+            
             <StackPanel Orientation="Horizontal">
                 <TextBox Width="200" Text="{Binding SearchByNameText, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBox Width="200" Text="{Binding SearchBySiteText, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBox Width="200" Text="{Binding SearchByServiceText, UpdateSourceTrigger=PropertyChanged}"/>
                 <Button Content="🔍"/>
-                <Button Content="Create Salarie"/>
-                <Button Content="Create Site"/>
-                <Button Content="Create Service"/>
+                <Button Content="Create Salarie" Command="{Binding CreateSalarieCommand}"/>
+                <Button Content="Create Site" Command="{Binding CreateSiteCommand}"/>
+                <Button Content="Create Service" Command="{Binding CreateServiceCommand}"/>
             </StackPanel>
-            <!-- -->
+            
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0 10  300 0" Width="590" Background="#8e9aaf">
                 <ItemsControl ItemsSource="{Binding ListSalaries}">
                     <ItemsControl.ItemsPanel>
@@ -38,7 +38,7 @@
                                     <TextBlock Text="{Binding Nom}" FontSize="16"/>
                                     <TextBlock Text="{Binding Prenom}" FontSize="14"/>
                                     <Button Content="Delete"
-                                            Command="{Binding DataContext.DeleteSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                            Command="{Binding DataContext.DeleteSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
                                             CommandParameter="{Binding}"/>
                                     <Button Content="Update"
                                             Command="{Binding DataContext.UpdateSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
@@ -48,30 +48,38 @@
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-
             </ScrollViewer>
         </Grid>
         
         <StackPanel Width="300" Height="570" Background="Black" Margin="600 80  0 0">
             <TextBlock Text="Create Salarie" Foreground="White"/>
-            <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox Text="{Binding Salarie.Prenom, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox Text="{Binding Salarie.TelephoneFixe, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.TelephonePortable, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Text="{Binding Salarie.Email, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.serviceId, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.siteId, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Salarie.TelephonePortable, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Salarie.Email, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <ComboBox ItemsSource="{Binding Sites}" 
+                      SelectedValue="{Binding Salarie.siteId, UpdateSourceTrigger=PropertyChanged}" 
+                      DisplayMemberPath="SiteName"
+                      SelectedValuePath="Id"/>
+    
+            <ComboBox ItemsSource="{Binding Services}" 
+                      SelectedValue="{Binding Salarie.serviceId, UpdateSourceTrigger=PropertyChanged}" 
+                      DisplayMemberPath="ServiceName"
+                      SelectedValuePath="Id"/>
+    
             <Button Command="{Binding CreateSalarieCommand}" Content="Create"/>
+            
             <TextBlock Text="Create Site" Foreground="White"/>
-            <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.Prenom, UpdateSourceTrigger=PropertyChanged}" />
-            <Button>Delete</Button>
-            <Button>Create</Button>
+            <TextBox Text="{Binding Site.SiteName, UpdateSourceTrigger=PropertyChanged}" />
+            <Button Command="{Binding CreateSiteCommand}" Content="Create"/>
+            <Button Command="{Binding DeleteSiteCommand}" Content="Delete"/>
+            
             <TextBlock Text="Create Service" Foreground="White"/>
-            <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.Prenom, UpdateSourceTrigger=PropertyChanged}" />
-            <Button>Delete</Button>
-            <Button>Create</Button>
+            <TextBox Text="{Binding Service.ServiceName, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Command="{Binding CreateServiceCommand}" Content="Create"/>
+            <Button Command="{Binding DeleteServiceCommand}" Content="Delete"/>
         </StackPanel>
         
     </Grid>

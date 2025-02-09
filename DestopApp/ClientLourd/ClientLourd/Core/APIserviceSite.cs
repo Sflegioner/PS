@@ -9,16 +9,26 @@ namespace ClientLourd.Core
 {
     public static class APIserviceSite
     {
-        private static string baseURL = "http://localhost:5052/";
-        private static HttpClient client = new HttpClient();
+        private static readonly string baseURL = "http://localhost:5052/";
+        private static readonly HttpClient client = new HttpClient();
 
         public static async Task<List<SiteModel>> GetSitesAsync()
         { 
             HttpResponseMessage response = await client.GetAsync($"{baseURL}api/sites");
             response.EnsureSuccessStatusCode(); 
             string json = await response.Content.ReadAsStringAsync();
-            List<SiteModel> sites = JsonSerializer.Deserialize<List<SiteModel>>(json, new JsonSerializerOptions {PropertyNameCaseInsensitive = true });
-            return sites ?? new List<SiteModel>();
+            return JsonSerializer.Deserialize<List<SiteModel>>(json, new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ?? new List<SiteModel>();
+        }
+        public static async Task<bool> PostSiteAsync(string siteName)
+        {
+            HttpResponseMessage response = await client.PostAsync(
+                $"{baseURL}api/sites/{siteName}", null);
+            return response.IsSuccessStatusCode;
+        }
+        public static async Task<bool> DeleteSiteAsync(string siteName)
+        {
+            HttpResponseMessage response = await client.DeleteAsync($"{baseURL}api/sites/{siteName}");
+            return response.IsSuccessStatusCode;
         }
     }
 }
