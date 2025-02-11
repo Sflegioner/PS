@@ -6,5 +6,6 @@
     &lt;TestId&gt;xUnit::7CE77B0E-CDFA-4CCA-99A9-6534F507965C::net9.0-windows::APIserviceServiceTests.PostServiceAsync_ReturnsTrue_WhenSuccess&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7CE77B0E-CDFA-4CCA-99A9-6534F507965C::net9.0-windows::APIserviceServiceTests.DeleteServiceAsync_ReturnsTrue_WhenSuccess&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::7CE77B0E-CDFA-4CCA-99A9-6534F507965C::net9.0-windows::APIserviceSalarieTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::7CE77B0E-CDFA-4CCA-99A9-6534F507965C::net9.0-windows::TestProject1.LoginTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

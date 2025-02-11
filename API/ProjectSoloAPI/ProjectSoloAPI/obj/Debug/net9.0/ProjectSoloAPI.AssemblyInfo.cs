@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjectSoloAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a7152f3224f3f603b00b03efdfc435e8e1ff973")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d613d9682224e348e407f1933c26b1ae32000ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjectSoloAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjectSoloAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

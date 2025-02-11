@@ -105,3 +105,4 @@ C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\TestProject1\obj\Debug\net9.0-windo
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\TestProject1\obj\Debug\net9.0-windows\TestProject1.pdb
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\TestProject1\obj\Debug\net9.0-windows\TestProject1.genruntimeconfig.cache
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\TestProject1\obj\Debug\net9.0-windows\ref\TestProject1.dll
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\TestProject1\bin\Debug\net9.0-windows\BCrypt.Net-Next.dll

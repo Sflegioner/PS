@@ -24,12 +24,12 @@ public class SalarieModel
     [BsonElement("Email")]
     public string Email { get; set; } 
 
-    [BsonElement("Service")]
+    [BsonElement("ServiceId")]
     [BsonRequired]
     [BsonRepresentation(BsonType.ObjectId)]
     public string ServiceId { get; set; }
 
-    [BsonElement("Site")]
+    [BsonElement("SiteId")]
     [BsonRequired] 
     [BsonRepresentation(BsonType.ObjectId)]
     public string SiteId { get; set; }
