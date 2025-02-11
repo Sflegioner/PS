@@ -74,11 +74,13 @@
             <TextBlock Text="Create Site" Foreground="White"/>
             <TextBox Text="{Binding Site.SiteName, UpdateSourceTrigger=PropertyChanged}" />
             <Button Command="{Binding CreateSiteCommand}" Content="Create"/>
+            <Button Command="{Binding Update}" Content="Update"/>
             <Button Command="{Binding DeleteSiteCommand}" Content="Delete"/>
             
             <TextBlock Text="Create Service" Foreground="White"/>
             <TextBox Text="{Binding Service.ServiceName, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Command="{Binding CreateServiceCommand}" Content="Create"/>
+            <Button Command="{Binding Update}" Content="Update"/>
             <Button Command="{Binding DeleteServiceCommand}" Content="Delete"/>
         </StackPanel>
         

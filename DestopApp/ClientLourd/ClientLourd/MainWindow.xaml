@@ -46,22 +46,22 @@
             <StackPanel Grid.Column="0" Grid.Row="1" Background="#495057">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="25"></RowDefinition>
-                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Click="ChangeToCommonPage" Grid.Column="0" Grid.Row="0"></Button>
-                    <Button Click="ChangeToAdminPage" Grid.Column="0" Grid.Row="1"></Button>
+                    <Button Content="Page d'accueil" FontWeight="Heavy" FontSize="15" Click="ChangeToCommonPage" Grid.Column="0" Grid.Row="0"></Button>
+                    <Button Content="Admin panel" FontWeight="Heavy" FontSize="15" Name="AdminPanel" Click="ChangeToAdminPage" Grid.Column="0" Grid.Row="1"></Button>
                 </Grid>
             </StackPanel>
             <ContentControl Grid.Column="1" Grid.Row="1" x:Name="MainContent"/>
         </Grid>
         
         
-        
-        <Grid Name="LoginField" HorizontalAlignment="Center" Visibility="Hidden" VerticalAlignment="Center">
+        <StackPanel Name="PanelBackGround" Background="#CC000000" ></StackPanel>
+        <Grid Name="LoginField" HorizontalAlignment="Center"  VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"></RowDefinition>
             </Grid.RowDefinitions>
@@ -76,12 +76,38 @@
             </StackPanel>
             <StackPanel Background="#f8f9fa" Grid.Column="1" Grid.Row="0">
                 <StackPanel HorizontalAlignment="Center" Margin="0 100 0 0" >
-                    <TextBox Name="LoginNameInput" FontSize="20" Margin="0 0 0 10" BorderThickness="2"> Login</TextBox>
-                    <TextBox Name="PasswordInput" FontSize="20" BorderThickness="2"> Password</TextBox>
-                    <Button Click="LoginCheck" FontSize="20">Login</Button>
+                    <TextBox Width="150" FontWeight="UltraBlack" Name="LoginNameInput" FontSize="20" Margin="0 0 0 10" BorderThickness="2"> Login</TextBox>
+                    <TextBox Width="150" FontWeight="UltraBlack" Name="PasswordInput" FontSize="20" BorderThickness="2"> Password</TextBox>
+                    <Button FontWeight="UltraBlack" Margin="0 20 0 0"  Width="100" Click="LoginCheck" FontSize="20">Login</Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
+        <Grid Name="PolygonStyle">
+            <Polygon Points="150,50 250,20 300,100 200,150" Margin="100 300 400 0"
+                     Fill="Tomato"
+                     Stroke="White"
+                     StrokeThickness="2"
+                     Opacity="0.7"/>
+        
+            <Polygon Points="400,30 500,100 450,200 350,150" Margin="400 100 400 0"
+                     Fill="LimeGreen"
+                     Stroke="White"
+                     StrokeThickness="2"
+                     Opacity="0.7"/>
+            <Polygon Points="400,30 500,100 450,200 350,150" Margin="400 100 10 0"
+                     Fill="LimeGreen"
+                     Stroke="White"
+                     StrokeThickness="2"
+                     Opacity="0.7"/>
+        
+            <Polygon Points="100,40 500,100 200,300 350,150" Margin="100 250 10 0"
+                     Fill="Black"
+                     Stroke="White"
+                     StrokeThickness="2"
+                     Opacity="0.7"/>
+            
+        </Grid>
+        
     </Grid>
     
     

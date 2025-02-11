@@ -32,3 +32,4 @@ C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-window
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\UpdateSalarieView.g.cs
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\obj\Debug\net9.0-windows\MVVM\View\UpdateSalarieView.baml
 C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\Newtonsoft.Json.dll
+C:\GitCESI\ProjectSolo\DestopApp\ClientLourd\ClientLourd\bin\Debug\net9.0-windows\BCrypt.Net-Next.dll

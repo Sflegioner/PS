@@ -53,8 +53,21 @@ public partial class MainWindow : Window
     {
         string username = LoginNameInput.Text;
         string password = PasswordInput.Text;
-        ConnectedUser.ChaeckIfIsAdmin(username, password);
-        Console.WriteLine(ConnectedUser.IsAdmin);
+
+        if (ConnectedUser.VerifyPassword(password))
+        {
+            MessageBox.Show("Vous êtes connecté comme administrateur", "Entrée réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+            PanelBackGround.Visibility = Visibility.Hidden;
+            PolygonStyle.Visibility = Visibility.Hidden;
+        }
+        else
+        {
+            AdminPanel.Visibility = Visibility.Hidden;
+            MessageBox.Show("Vous êtes connecté comme un utilisateur", "Entrée réussie", MessageBoxButton.OK, MessageBoxImage.Information);
+            PanelBackGround.Visibility = Visibility.Hidden;
+            PolygonStyle.Visibility = Visibility.Hidden;
+        }
+
         LoginField.Visibility = Visibility.Hidden;
     }
 
