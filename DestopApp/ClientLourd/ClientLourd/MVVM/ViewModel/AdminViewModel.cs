@@ -20,6 +20,20 @@ namespace ClientLourd.MVVM.ViewModel
         [ObservableProperty]
         private ServiceModel service = new();
 
+        // Властивості для оновлення сайтів (вже є)
+        [ObservableProperty]
+        private string oldSiteName;
+
+        [ObservableProperty]
+        private string newSiteName;
+
+        // Нові властивості для оновлення сервісів
+        [ObservableProperty]
+        private string oldServiceName;
+
+        [ObservableProperty]
+        private string newServiceName;
+
         public ObservableCollection<SalarieModel> ListSalaries { get; } = new();
         public ObservableCollection<SiteModel> Sites { get; } = new();
         public ObservableCollection<ServiceModel> Services { get; } = new();
@@ -37,6 +51,7 @@ namespace ClientLourd.MVVM.ViewModel
             await LoadServices();
         }
 
+        #region Salarie Methods
         [RelayCommand]
         private async Task CreateSalarie()
         {
@@ -50,13 +65,14 @@ namespace ClientLourd.MVVM.ViewModel
             {
                 await LoadSalaries();
                 MessageBox.Show("Salarie created successfully!");
-                Salarie = new SalarieModel(); 
+                Salarie = new SalarieModel();
             }
             else
             {
                 MessageBox.Show("Failed to create Salarie.");
             }
         }
+
         [RelayCommand]
         private async Task DeleteSalarie(SalarieModel salarie)
         {
@@ -86,29 +102,29 @@ namespace ClientLourd.MVVM.ViewModel
         private async Task LoadSalaries()
         {
             ListSalaries.Clear();
-            foreach (var salarie in await APIserviceSalarie.GetSalarieAsync())
+            foreach (var s in await APIserviceSalarie.GetSalarieAsync())
             {
-                ListSalaries.Add(salarie);
+                ListSalaries.Add(s);
             }
         }
 
+        [RelayCommand]
+        private void UpdateSalarie(SalarieModel salarie)
+        {
+            if (salarie == null) return;
+            var updateWindow = new UpdateSalarieView(salarie);
+            updateWindow.ShowDialog();
+        }
+        #endregion
+
+        #region Site Methods
         [RelayCommand]
         private async Task LoadSites()
         {
             Sites.Clear();
-            foreach (var site in await APIserviceSite.GetSitesAsync())
+            foreach (var s in await APIserviceSite.GetSitesAsync())
             {
-                Sites.Add(site);
-            }
-        }
-
-        [RelayCommand]
-        private async Task LoadServices()
-        {
-            Services.Clear();
-            foreach (var service in await APIserviceService.GetServicesAsync())
-            {
-                Services.Add(service);
+                Sites.Add(s);
             }
         }
 
@@ -155,6 +171,38 @@ namespace ClientLourd.MVVM.ViewModel
         }
 
         [RelayCommand]
+        private async Task UpdateSite()
+        {
+            if (string.IsNullOrWhiteSpace(OldSiteName) || string.IsNullOrWhiteSpace(NewSiteName))
+            {
+                MessageBox.Show("Please enter both the old and new site names.");
+                return;
+            }
+
+            if (await APIserviceSite.UpdateSiteAsync(OldSiteName, NewSiteName))
+            {
+                await LoadSites();
+                MessageBox.Show($"Site '{OldSiteName}' updated to '{NewSiteName}' successfully!");
+                OldSiteName = string.Empty;
+                NewSiteName = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Failed to update Site.");
+            }
+        }
+
+        [RelayCommand]
+        private async Task LoadServices()
+        {
+            Services.Clear();
+            foreach (var s in await APIserviceService.GetServicesAsync())
+            {
+                Services.Add(s);
+            }
+        }
+
+        [RelayCommand]
         private async Task CreateService()
         {
             if (string.IsNullOrWhiteSpace(Service.ServiceName))
@@ -195,13 +243,28 @@ namespace ClientLourd.MVVM.ViewModel
                 MessageBox.Show("Failed to delete Service.");
             }
         }
-
+        
         [RelayCommand]
-        private void UpdateSalarie(SalarieModel salarie)
+        private async Task UpdateService()
         {
-            if (salarie == null) return;
-            var updateWindow = new UpdateSalarieView(salarie);
-            updateWindow.ShowDialog();
+            if (string.IsNullOrWhiteSpace(OldServiceName) || string.IsNullOrWhiteSpace(NewServiceName))
+            {
+                MessageBox.Show("Please enter both the old and new service names.");
+                return;
+            }
+
+            if (await APIserviceService.UpdateServiceAsync(OldServiceName, NewServiceName))
+            {
+                await LoadServices();
+                MessageBox.Show($"Service '{OldServiceName}' updated to '{NewServiceName}' successfully!");
+                OldServiceName = string.Empty;
+                NewServiceName = string.Empty;
+            }
+            else
+            {
+                MessageBox.Show("Failed to update Service.");
+            }
         }
+        #endregion
     }
 }

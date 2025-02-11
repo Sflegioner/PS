@@ -33,5 +33,12 @@ namespace ClientLourd.Core
             HttpResponseMessage response = await client.DeleteAsync($"{baseURL}api/services/{serviceName}");
             return response.IsSuccessStatusCode;
         }
+
+        public static async Task<bool> UpdateServiceAsync(string serviceNameOld, string serviceNameNew)
+        {
+            HttpResponseMessage response = await client.PutAsync(
+                $"{baseURL}api/services/{serviceNameOld}&{serviceNameNew}", null);
+            return response.IsSuccessStatusCode;
+        }
     }
 }

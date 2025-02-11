@@ -51,38 +51,55 @@
             </ScrollViewer>
         </Grid>
         
-        <StackPanel Width="300" Height="570" Background="Black" Margin="600 80  0 0">
-            <TextBlock Text="Create Salarie" Foreground="White"/>
-            <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Text="{Binding Salarie.Prenom, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.TelephoneFixe, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.TelephonePortable, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBox Text="{Binding Salarie.Email, UpdateSourceTrigger=PropertyChanged}"/>
+        <ScrollViewer Width="300" Height="870" 
+              VerticalScrollBarVisibility="Auto"
+              HorizontalScrollBarVisibility="Disabled"
+              Margin="600,80,0,0">
+    <StackPanel Background="Black">
+        <TextBlock Text="Create Salarie" Foreground="White"/>
+        <TextBox Text="{Binding Salarie.Nom, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Text="{Binding Salarie.Prenom, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Text="{Binding Salarie.TelephoneFixe, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Text="{Binding Salarie.TelephonePortable, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Text="{Binding Salarie.Email, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <ComboBox ItemsSource="{Binding Sites}" 
-                      SelectedValue="{Binding Salarie.siteId, UpdateSourceTrigger=PropertyChanged}" 
-                      DisplayMemberPath="SiteName"
-                      SelectedValuePath="Id"/>
-    
-            <ComboBox ItemsSource="{Binding Services}" 
-                      SelectedValue="{Binding Salarie.serviceId, UpdateSourceTrigger=PropertyChanged}" 
-                      DisplayMemberPath="ServiceName"
-                      SelectedValuePath="Id"/>
-    
-            <Button Command="{Binding CreateSalarieCommand}" Content="Create"/>
-            
-            <TextBlock Text="Create Site" Foreground="White"/>
-            <TextBox Text="{Binding Site.SiteName, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Command="{Binding CreateSiteCommand}" Content="Create"/>
-            <Button Command="{Binding Update}" Content="Update"/>
-            <Button Command="{Binding DeleteSiteCommand}" Content="Delete"/>
-            
-            <TextBlock Text="Create Service" Foreground="White"/>
-            <TextBox Text="{Binding Service.ServiceName, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Command="{Binding CreateServiceCommand}" Content="Create"/>
-            <Button Command="{Binding Update}" Content="Update"/>
-            <Button Command="{Binding DeleteServiceCommand}" Content="Delete"/>
-        </StackPanel>
+        <ComboBox ItemsSource="{Binding Sites}" 
+                  SelectedValue="{Binding Salarie.siteId, UpdateSourceTrigger=PropertyChanged}" 
+                  DisplayMemberPath="SiteName"
+                  SelectedValuePath="Id"/>
+
+        <ComboBox ItemsSource="{Binding Services}" 
+                  SelectedValue="{Binding Salarie.serviceId, UpdateSourceTrigger=PropertyChanged}" 
+                  DisplayMemberPath="ServiceName"
+                  SelectedValuePath="Id"/>
+
+        <Button Command="{Binding CreateSalarieCommand}" Content="Create"/>
+        
+        <Separator Margin="5"/>
+        <TextBlock Text="Create Site" Foreground="White"/>
+        <Separator Margin="5"/>
+        
+        <TextBox Text="{Binding Site.SiteName, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,5,0"/>
+        <Button Command="{Binding CreateSiteCommand}" Margin="5,0,5,0" Content="Create"/>
+        <Button Command="{Binding DeleteSiteCommand}" Margin="5,0,5,0" Content="Delete"/>
+        <TextBlock Text="Old Site Name:" Foreground="White" Margin="5,0,5,0"/>
+        <TextBox Text="{Binding OldSiteName, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+        <TextBlock Text="New Site Name:" Foreground="White" Margin="5,0,5,0"/>
+        <TextBox Text="{Binding NewSiteName, UpdateSourceTrigger=PropertyChanged}" Margin="5" />
+        <Button Command="{Binding UpdateSiteCommand}" Content="Update" Margin="5"/>
+        
+        <TextBlock Text="Create Service" Foreground="White"/>
+        <TextBox Text="{Binding Service.ServiceName, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <Button Command="{Binding CreateServiceCommand}" Margin="5" Content="Create"/>
+        <Button Command="{Binding DeleteServiceCommand}" Margin="5" Content="Delete"/>
+        <TextBlock Text="Update Service" Foreground="White" Margin="5"/>
+        <TextBlock Text="Old Service Name:" Foreground="White" Margin="5,0,5,0"/>
+        <TextBox Text="{Binding OldServiceName, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <TextBlock Text="New Service Name:" Foreground="White" Margin="5,0,5,0"/>
+        <TextBox Text="{Binding NewServiceName, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        <Button Command="{Binding UpdateServiceCommand}" Content="Update" Margin="5"/>
+    </StackPanel>
+</ScrollViewer>
         
     </Grid>
 </UserControl>
