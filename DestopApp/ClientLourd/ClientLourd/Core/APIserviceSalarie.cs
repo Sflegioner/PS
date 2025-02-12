@@ -26,7 +26,7 @@ public class APIserviceSalarie
         foreach (var salarie in salaries)
         {
             var site = sites.FirstOrDefault(s => s.Id == salarie.siteId);
-            salarie.siteName = site != null ? site.SiteName : "Nan";
+            salarie.siteName = site != null ? site.SiteName : "NaN";
 
             var service = services.FirstOrDefault(s => s.Id == salarie.serviceId);
             salarie.serviceName = service != null ? service.ServiceName : "NaN";

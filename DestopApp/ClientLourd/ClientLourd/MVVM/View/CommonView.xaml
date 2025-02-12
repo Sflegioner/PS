@@ -32,14 +32,35 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Margin="10" Background="LightGray" CornerRadius="10"
-                                MinWidth="150" MaxWidth="300" Height="120"
+                                MinWidth="150" MaxWidth="200" Height="200"
                                 MouseDown="OnItemClick">
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <TextBlock Text="{Binding Prenom}" FontSize="18" FontWeight="Bold"/>
-                                <TextBlock Text="{Binding Nom}" FontSize="16"/>
-                                <TextBlock Text="{Binding siteName}" FontSize="16"/>
-                                <TextBlock Text="{Binding serviceName}" FontSize="16"/>
-                            </StackPanel>
+                            <Border Padding="20" BorderBrush="Gray" BorderThickness="2" CornerRadius="10">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <TextBlock Text="Client:" FontSize="20" FontWeight="Bold" Foreground="Black" Margin="0 0 0 10"/>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="10"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel Grid.Column="0">
+                                            <TextBlock Text="Nom client:" FontWeight="SemiBold"/>
+                                            <TextBlock Text="Prénom client:" FontWeight="SemiBold"/>
+                                            <TextBlock Text="Site:" FontWeight="SemiBold"/>
+                                            <TextBlock Text="Service:" FontWeight="SemiBold"/>
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock Text="{Binding Nom}" FontSize="18" Foreground="Black"/>
+                                            <TextBlock Text="{Binding Prenom}" FontSize="16"  Foreground="Black"/>
+                                            <TextBlock Text="{Binding siteName}" FontSize="16" Foreground="Black"/>
+                                            <TextBlock Text="{Binding serviceName}" FontSize="16" Foreground="Black"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
                         </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

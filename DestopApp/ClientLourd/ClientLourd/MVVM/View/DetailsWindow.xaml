@@ -3,20 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:ClientLourd.MVVM.View"
-        mc:Ignorable="d"
-        Title="DetailsWindow" Height="450" Width="800">
-        <Grid>
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                        <TextBlock Text="{Binding Nom}" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Prenom}" FontSize="16"/>
-                        <TextBlock Text="{Binding TelephoneFixe}" FontSize="16"/>
-                        <TextBlock Text="{Binding TelephonePortable}" FontSize="16"/>
-                        <TextBlock Text="{Binding Email}" FontSize="16"/>
-                        <TextBlock Text="{Binding Prenom}" FontSize="16"/>
-                        <TextBlock Text="{Binding Prenom}" FontSize="16"/>
-                        <TextBlock Text="{Binding Prenom}" FontSize="16"/>
-                        <Button Content="Fermer" Click="OnCloseClick"/>
-                </StackPanel>
-        </Grid>
+        Title="Détails du Client" Height="500" Width="600"
+        Background="#F3F4F6" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <!-- Фонова панель -->
+        <Border Background="White" Padding="20" CornerRadius="15"
+                BorderBrush="#D1D5DB" BorderThickness="2"
+                Effect="{DynamicResource DropShadowEffect}">
+            
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Заголовок -->
+                <TextBlock Text="Détails du Client" FontSize="22" FontWeight="Bold"
+                           Foreground="Gray" Margin="0 0 0 15" TextAlignment="Center"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" >
+                        <TextBlock Text=" Nom:" FontWeight="SemiBold" Foreground="#374151"/>
+                        <TextBlock Text=" Prénom:" FontWeight="SemiBold" Foreground="#374151"/>
+                        <TextBlock Text=" Téléphone Fixe:" FontWeight="SemiBold" Foreground="#374151"/>
+                        <TextBlock Text=" Téléphone Portable:" FontWeight="SemiBold" Foreground="#374151"/>
+                        <TextBlock Text=" Email:" FontWeight="SemiBold" Foreground="#374151"/>
+                        <TextBlock Text=" Site:" FontWeight="SemiBold" Foreground="#374151"/>
+                        <TextBlock Text=" Service:" FontWeight="SemiBold" Foreground="#374151"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2" >
+                        <TextBlock Text="{Binding Nom}" FontSize="18" FontWeight="Bold" Foreground="Black"/>
+                        <TextBlock Text="{Binding Prenom}" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+                        <TextBlock Text="{Binding TelephoneFixe}" FontSize="16" Foreground="Black"/>
+                        <TextBlock Text="{Binding TelephonePortable}" FontSize="16" Foreground="Black"/>
+                        <TextBlock Text="{Binding Email}" FontSize="16" Foreground="Black"/>
+                        <TextBlock Text="{Binding siteName}" FontSize="16" Foreground="Black"/>
+                        <TextBlock Text="{Binding serviceName}" FontSize="16" Foreground="Black"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
 </Window>

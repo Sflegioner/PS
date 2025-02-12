@@ -32,17 +32,28 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Border Margin="10" Background="LightGray" CornerRadius="10" MinWidth="150" MaxWidth="300" Height="120">
-                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding Id}" FontSize="18" FontWeight="Bold"/>
-                                    <TextBlock Text="{Binding Nom}" FontSize="16"/>
-                                    <TextBlock Text="{Binding Prenom}" FontSize="14"/>
-                                    <Button Content="Delete"
-                                            Command="{Binding DataContext.DeleteSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                            CommandParameter="{Binding}"/>
-                                    <Button Content="Update"
-                                            Command="{Binding DataContext.UpdateSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
-                                            CommandParameter="{Binding}"/>
+                            <Border Margin="10" Background="White" CornerRadius="10" MinWidth="200" MaxWidth="320" Height="140"
+                                    BorderBrush="#D1D5DB" BorderThickness="2"
+                                    Effect="{DynamicResource DropShadowEffect}">
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+                                    <TextBlock Text="{Binding Id}" FontSize="20" FontWeight="Bold" Foreground="DarkBlue" TextAlignment="Center"/>
+
+                                    <TextBlock Text="{Binding Nom}" FontSize="16" FontWeight="SemiBold" Foreground="#374151"/>
+                                    <TextBlock Text="{Binding Prenom}" FontSize="14" Foreground="#4B5563"/>
+                                    <TextBlock Text="{Binding siteName}" FontSize="14" Foreground="#6B7280"/>
+                                    <TextBlock Text="{Binding serviceName}" FontSize="14" Foreground="#6B7280"/>
+                                    
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="5 0 0 5">
+                                        <Button Content="Delete" Foreground="White" Width="80" Height="30"
+
+                                                Command="{Binding DataContext.DeleteSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                CommandParameter="{Binding}"/>
+                    
+                                        <Button Content="Update" Foreground="White" Width="80" Height="30"
+                                                Command="{Binding DataContext.UpdateSalarieCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                CommandParameter="{Binding}"/>
+                                    </StackPanel>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
